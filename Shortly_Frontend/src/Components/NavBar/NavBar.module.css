@@ -1,0 +1,32 @@
+@import '../../styles/colors.css';
+
+.navBarColor {
+  background-color: var(--background-color);
+}
+
+.textColor {
+  color: var(--text-color);
+  /* color: red; */
+}
+
+.buttonColors {
+  background-color: var(--button-link-color);
+  color: var(--background-color);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--darker-purple-theme-color);
+    transition: .2s ease-in-out;
+  }
+}
+
+.links {
+  color: var(--text-color);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--button-link-color);
+    transition: .2s ease-in-out;
+  }
+}
+
