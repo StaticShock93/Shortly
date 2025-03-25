@@ -9,27 +9,40 @@
 	--lighter-purple-theme-color: #4b3f6b; /* Yellow */
 }
 
-.text-color {
+.textColor {
 	color: var(--text-color);
 }
-.title-color {
+.titleColor {
 	color: var(--title-color);
 }
-.button-link-color {
+.buttonLinkColor {
 	color: var(--button-link-color);
 }
-.background-color {
+.backgroundColor {
 	background-color: var(--background-color);
 }
-.border-color {
+.borderColor {
 	border-color: var(--border-color);
 }
-.error-color {
+.errorColor {
 	color: var(--error-color);
 }
-.darker-purple-theme-color {
+.darker-PurpleThemeColor {
 	color: var(--darker-purple-theme-color);
 }
-.lighter-purple-theme-color {
+.lighterPurpleThemeColor {
 	color: var(--lighter-purple-theme-color);
 }
+
+.buttonColors {
+	background-color: var(--button-link-color);
+	color: var(--background-color);
+	cursor: pointer;
+  
+	&:hover {
+	  background-color: var(--darker-purple-theme-color);
+	  color: var(--button-link-color);
+	  box-shadow: 0 0 10px var(--button-link-color);
+	  transition: .2s ease-in-out;
+	}
+  }

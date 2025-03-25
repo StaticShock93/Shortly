@@ -1,4 +1,4 @@
-@import '../../styles/colors.css';
+@import '../../styles/globalStyles.css';
 
 .navBarColor {
   background-color: var(--background-color);
@@ -9,7 +9,7 @@
   /* color: red; */
 }
 
-.buttonColors {
+/* .buttonColors {
   background-color: var(--button-link-color);
   color: var(--background-color);
   cursor: pointer;
@@ -18,7 +18,7 @@
     background-color: var(--darker-purple-theme-color);
     transition: .2s ease-in-out;
   }
-}
+} */
 
 .links {
   color: var(--text-color);

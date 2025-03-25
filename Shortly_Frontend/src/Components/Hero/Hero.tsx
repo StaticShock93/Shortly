@@ -1,18 +1,27 @@
-import React from 'react';
+import styles from './Hero.module.css';
 
 export default function Hero() {
 	return (
-		<section>
-			<div>
-				<h1>More than just shorter links</h1>
-				<p>
+		<section
+			className={`flex flex-col md:flex-row items-center md:justify-between md:ml-33 lg:ml-45 md:max-w-[80vw]`}>
+			<div
+				className={`md:order-2 flex items-center justify-center pl-20 shrink-1`}>
+				<img src='./src/images/illustration-working.svg' alt='illustration' />
+			</div>
+			<div
+				className={`md:order-1 flex flex-col items-center md:items-start justify-center shrink-1 text-center md:text-left mt-5 md:mt-0`}>
+				<h1
+					className={`text-2xl md:text-4xl lg:text-6xl font-bold ${styles.titleColor}`}>
+					More than just shorter links
+				</h1>
+				<p className={`mt-5 ${styles.textColor}`}>
 					Build your brand’s recognition and get detailed insights on how your
 					links are performing.
 				</p>
-				<button>Get Started</button>
-			</div>
-			<div>
-				<img src='images/illustration-working.svg' alt='illustration' />
+				<button
+					className={`${styles.buttonColors} mt-5 rounded-full px-5 py-2 shrink-1 font-bold`}>
+					Get Started
+				</button>
 			</div>
 		</section>
 	);
