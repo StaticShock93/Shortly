@@ -1,10 +1,27 @@
+/**
+ * Description: This file is used to display the mobile menu.
+ * 1. MobileMenu component is a functional component which accepts styleProp as a prop.
+ * 2. It contains a section with two divs.
+ * 3. The first div contains a list of links and the second div contains a heading, paragraph, and a button.
+ * 4. It returns a section with a list of links and a button.
+ */
+
 import React from 'react';
 import styles from './MobileMenu.module.css';
 
+/**
+ * MobileMenuProps
+ * @param {React.CSSProperties} styleProp - style for the component
+ */
 type MobileMenuProps = {
 	styleProp?: React.CSSProperties;
 };
 
+/**
+ * MobileMenu component
+ * @param {MobileMenuProps} - props for the MobileMenu component
+ * @returns {JSX.Element} - React component
+ */
 export default function MobileMenu({styleProp}: MobileMenuProps) {
 	return (
 		<section style={styleProp} className={`${styles.bg}`}>
@@ -28,7 +45,8 @@ export default function MobileMenu({styleProp}: MobileMenuProps) {
 							<a href='#'>Login</a>
 						</li>
 						<li className='pt-2'>
-							<button className={`${styles.buttonColors} rounded-full px-[6rem] py-2`}>
+							<button
+								className={`${styles.buttonColors} rounded-full px-[6rem] py-2`}>
 								<a href='#'>Sign Up</a>
 							</button>
 						</li>

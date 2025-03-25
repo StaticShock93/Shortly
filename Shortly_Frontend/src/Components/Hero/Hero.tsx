@@ -1,5 +1,14 @@
+// Desc: This file contains the Hero component which is the first section of the landing page.
+// 1. Hero component is a functional component.
+// 2. It contains a section with two divs.
+// 3. The first div contains an image and the second div contains a heading, paragraph, and a button.
+
 import styles from './Hero.module.css';
 
+/**
+ * Hero component
+ * @returns {JSX.Element} - React component
+ */
 export default function Hero() {
 	return (
 		<section

@@ -1,22 +1,36 @@
-// Desc: NavBar component for the application
+/**
+ * Desc: NavBar component for the application
+ * 1. NavBar component is a functional component.
+ * 2. It takes getChildData as a prop which is a function to get the state of the mobile menu.
+ * 3. It has a state hidden which is a boolean value.
+ * 4. It has a function handleClick to handle the click event on the mobile menu.
+ *  */
+
 import React, {useState} from 'react';
 import styles from './NavBar.module.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 
+/**
+ * NavBarProps
+ * @param {function} getChildData - function to get the state of the mobile menu
+ */
 type NavBarProps = {
 	getChildData: (hidden: boolean) => void;
 };
+
+/**
+ * NavBar component
+ * @param {NavBarProps} - props for the NavBar component
+ * @returns {JSX.Element} - React component
+ */
 export default function NavBar({getChildData}: NavBarProps) {
 	const [hidden, setHidden] = useState(false);
 
-	//when this event is triggered return the new state to the app component to change the display of the mobile menu
-	// and toggle the hero section
-	// const handleTouchStart = (event: React.TouchEvent) => {
-	// 	console.log('touch start', event);
-	// 	setHidden(true);
-	// };
-
+	/**
+	 * handleCLick
+	 * @description - function to handle the click event on the mobile menu
+	 */
 	const handleCLick = (event: React.MouseEvent | React.TouchEvent) => {
 		console.log('click', hidden);
 		setHidden((prevHidden: boolean) => {
@@ -47,7 +61,6 @@ export default function NavBar({getChildData}: NavBarProps) {
 							<FontAwesomeIcon
 								icon={faBars}
 								onClick={handleCLick}
-								// onTouchStart={handleTouchStart}
 								className={`{styles.textColor} cursor-pointer`}
 							/>
 						</li>
