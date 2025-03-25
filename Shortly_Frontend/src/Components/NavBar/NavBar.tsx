@@ -12,21 +12,25 @@ export default function NavBar({getChildData}: NavBarProps) {
 
 	//when this event is triggered return the new state to the app component to change the display of the mobile menu
 	// and toggle the hero section
-	// const handleTouchStart = (event: React.MouseEvent) => {
+	// const handleTouchStart = (event: React.TouchEvent) => {
 	// 	console.log('touch start', event);
 	// 	setHidden(true);
 	// };
 
-	const handleCLick = (event: React.MouseEvent) => {
+	const handleCLick = (event: React.MouseEvent | React.TouchEvent) => {
 		console.log('click', hidden);
-		setHidden(!hidden);
+		setHidden((prevHidden: boolean) => {
+			const newHidden = !prevHidden;
+			getChildData(newHidden);
+			return newHidden;
+		});
 		getChildData(hidden);
 	};
 
 	return (
 		<header>
 			<nav
-				className={`flex justify-between items-center py-5 px-8 md:py-10 md:px-33 font-bold ${styles.navBarColor} ${styles.textColor}`}>
+				className={`flex justify-between items-center pt-5 px-8 md:py-10 md:px-33 font-bold ${styles.navBarColor} ${styles.textColor}`}>
 				<div className='flex items-center'>
 					<a href='/'>
 						<img src='/src/images/logo.svg' alt='Shortly' height='300' />
