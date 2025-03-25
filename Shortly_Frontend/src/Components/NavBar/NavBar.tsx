@@ -4,18 +4,30 @@ import styles from './NavBar.module.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 
-export default function NavBar() {
+type NavBarProps = {
+	getChildData: (hidden: boolean) => void;
+};
+export default function NavBar({getChildData}: NavBarProps) {
 	const [hidden, setHidden] = useState(false);
 
-	const handleTouchStart = (event: React.TouchEvent) => {
-		console.log('touch start', event);
-		setHidden(true);
+	//when this event is triggered return the new state to the app component to change the display of the mobile menu
+	// and toggle the hero section
+	// const handleTouchStart = (event: React.MouseEvent) => {
+	// 	console.log('touch start', event);
+	// 	setHidden(true);
+	// };
+
+	const handleCLick = (event: React.MouseEvent) => {
+		console.log('click', hidden);
+		setHidden(!hidden);
+		getChildData(hidden);
 	};
+
 	return (
 		<header>
 			<nav
 				className={`flex justify-between items-center py-5 px-8 md:py-10 md:px-33 font-bold ${styles.navBarColor} ${styles.textColor}`}>
-				<div onTouchStart={handleTouchStart} className='flex items-center'>
+				<div className='flex items-center'>
 					<a href='/'>
 						<img src='/src/images/logo.svg' alt='Shortly' height='300' />
 					</a>
@@ -28,7 +40,12 @@ export default function NavBar() {
 				<div>
 					<ul className='flex items-center shrink-1'>
 						<li className={`sm:hidden`}>
-							<FontAwesomeIcon icon={faBars} />
+							<FontAwesomeIcon
+								icon={faBars}
+								onClick={handleCLick}
+								// onTouchStart={handleTouchStart}
+								className={`{styles.textColor} cursor-pointer`}
+							/>
 						</li>
 						<li
 							className={`${styles.textColor} ${styles.links} hidden md:flex`}>
