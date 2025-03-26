@@ -1,0 +1,18 @@
+@import '../../Styles/variables.css';
+
+.shortenBgImg {    
+    background-color: var(--darker-purple-theme-color);
+    background-image: url('../../images/bg-shorten-desktop.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* height: 100px; */
+    /* border-radius: 10px; */
+    /* margin-top: 20px; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* position: relative; */
+    /* cursor: pointer; */
+    /* transition: .2s ease-in-out; */
+}

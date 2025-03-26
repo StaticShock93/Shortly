@@ -12,7 +12,7 @@ import styles from './Hero.module.css';
 export default function Hero() {
 	return (
 		<section
-			className={`flex flex-col md:flex-row items-center md:justify-between md:ml-33 lg:ml-45 md:max-w-[80vw]`}>
+			className={`flex flex-col md:flex-row items-center md:justify-between md:mt-10 md:ml-33 lg:ml-45 md:w-[95vw] md:max-w-[100vw]`}>
 			<div
 				className={`md:order-2 flex items-center justify-center pl-20 shrink-1`}>
 				<img src='./src/images/illustration-working.svg' alt='illustration' />

@@ -1,1 +1,21 @@
 @import "tailwindcss";
+@import './Styles/variables.css';
+
+body {
+  overflow-x: hidden;
+  background: linear-gradient(to bottom, 
+  white 0%,    /* White at the top */
+  white 35%,   /* White up to 35% */
+  #9e9aa8 35%, /* Gray (light) starts at 35% */
+  #9e9aa8 65%, /* Gray (light) ends at 65% */
+  purple 65%,  /* Purple starts at 65% */
+  purple 90%,  /* Purple ends at 90% */
+  black 90%,   /* Black starts at 90% */
+  black 100%   /* Second color stop starts at 25% (yellow) */
+
+  
+);
+margin: 0; /* Optional: Remove default margin */
+padding: 0; /* Optional: Remove default padding */
+height: 100%; /* Make sure the body fills the full viewport height */
+}

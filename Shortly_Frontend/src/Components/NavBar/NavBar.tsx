@@ -44,7 +44,7 @@ export default function NavBar({getChildData}: NavBarProps) {
 	return (
 		<header>
 			<nav
-				className={`flex justify-between items-center pt-5 px-8 md:py-10 md:px-33 font-bold ${styles.navBarColor} ${styles.textColor}`}>
+				className={`flex justify-between items-center pt-5 px-8 md:py-10 md:px-45 font-bold ${styles.textColor}`}>
 				<div className='flex items-center'>
 					<a href='/'>
 						<img src='/src/images/logo.svg' alt='Shortly' height='300' />

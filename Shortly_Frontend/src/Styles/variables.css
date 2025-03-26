@@ -1,6 +1,7 @@
 :root {
 	--title-color: #34313d; /* Black */
 	--button-link-color: #2bd0d0; /* Blue-Green */
+	--button-hover-link-color: #9AE3E3; /* Blue-Green */
 	--background-color: #eff1f7; /* Light Gray */
 	--text-color: #9e9aa8; /* Medium-Light Gray */
 	--border-color: #e0e0e0; /* Light Border */
@@ -40,9 +41,7 @@
 	cursor: pointer;
   
 	&:hover {
-	  background-color: var(--darker-purple-theme-color);
-	  color: var(--button-link-color);
-	  box-shadow: 0 0 10px var(--button-link-color);
+	  background-color: var(--button-hover-link-color);
 	  transition: .2s ease-in-out;
 	}
   }

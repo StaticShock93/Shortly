@@ -1,12 +1,8 @@
-@import '../../styles/globalStyles.css';
-
-.navBarColor {
-  background-color: var(--background-color);
-}
+@import '../../styles/variables.css';
 
 .textColor {
-  color: var(--text-color);
-  /* color: red; */
+	color: var(--text-color);
+	/* color: red; */
 }
 
 /* .buttonColors {
@@ -21,12 +17,11 @@
 } */
 
 .links {
-  color: var(--text-color);
-  cursor: pointer;
+	color: var(--text-color);
+	cursor: pointer;
 
-  &:hover {
-    color: var(--button-link-color);
-    transition: .2s ease-in-out;
-  }
+	&:hover {
+		color: var(--button-link-color);
+		transition: 0.2s ease-in-out;
+	}
 }
-
