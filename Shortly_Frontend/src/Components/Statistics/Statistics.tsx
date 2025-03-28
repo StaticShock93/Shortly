@@ -5,7 +5,7 @@ import fullyCustomizableIcon from '../../images/icon-fully-customizable.svg';
 export default function Statistics() {
 	return (
 		<section className='bg-[#eff1f7] mt-0 w-[70vw]'>
-			<div className='flex flex-col justify-center items-center text-center'>
+			<div className='flex flex-col justify-center items-center text-center pt-20 pb-12'>
 				<h2 className='text-3xl font-bold  text-[#34313D]'>
 					Advanced Statistics
 				</h2>
@@ -31,7 +31,7 @@ export default function Statistics() {
 							/>
 						</div>
 						<h6 className='font-bold text-lg px-6 pt-8'>Brand Recognition</h6>
-						<p className='pt-2 px-6 leading-relaxed text-sm text-[#9E9AA8]'>
+						<p className='pt-2 px-6 pb-3 leading-relaxed text-sm text-[#9E9AA8]'>
 							Boost your brand recognition with each click. Generic links don’t
 							mean a thing. Branded links help instil confidence in your
 							content.
@@ -39,7 +39,7 @@ export default function Statistics() {
 					</div>
 				</div>
 				{/* CARD 2 START */}
-				<div>
+				<div className='translate-y-[35px]'>
 					<div className='relative border-0 rounded-lg card1 bg-white h-55 w-75 flex flex-col justify-center mb-20'>
 						<div className='absolute top-[-40px] left-[25px] flex justify-center items-center h-19 w-19 bg-[#3A3054] border-0 rounded-full object-cover'>
 							<img
@@ -49,7 +49,7 @@ export default function Statistics() {
 							/>
 						</div>
 						<h6 className='font-bold text-lg px-6 pt-8'>Deatailed Records</h6>
-						<p className='pt-2 px-6 leading-relaxed text-sm text-[#9E9AA8]'>
+						<p className='pt-2 px-6 pb-3 leading-relaxed text-sm text-[#9E9AA8]'>
 							Gain insights into who is clicking your links. Knowing when and
 							where people engage with your content helps inform better
 							decisions.
@@ -57,7 +57,7 @@ export default function Statistics() {
 					</div>
 				</div>
 				{/* CARD 3 START */}
-				<div>
+				<div className='translate-y-[70px]'>
 					<div className='relative border-0 rounded-lg card1 bg-white h-55 w-75 flex flex-col justify-center mb-20'>
 						<div className='absolute top-[-40px] left-[25px] flex justify-center items-center h-19 w-19 bg-[#3A3054] border-0 rounded-full object-cover'>
 							<img
@@ -67,7 +67,7 @@ export default function Statistics() {
 							/>
 						</div>
 						<h6 className='font-bold text-lg px-6 pt-8'>Fully Customizable</h6>
-						<p className='pt-2 px-6 leading-relaxed text-sm text-[#9E9AA8]'>
+						<p className='pt-2 px-6 pb-3 leading-relaxed text-sm text-[#9E9AA8]'>
 							Improve brand awareness and content discoverability through
 							customizable links, supercharging audience engagement.
 						</p>
