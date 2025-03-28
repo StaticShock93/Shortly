@@ -3,7 +3,7 @@ import styles from './UrlShort.module.css';
 
 export default function UrlShort() {
 	return (
-		<div className={`${styles.backgroundColor} flex items-center justify-center w-[80%] md:w-[60%] lg:w-[100%]  py-4 rounded-lg`}>
+		<div className={`${styles.backgroundColor} flex items-center justify-center w-[80%] md:w-[60%] lg:w-[110vw]  py-4 rounded-lg mb-0`}>
 			<div className='flex items-center justify-between w-[80%] md:w-[60%] lg:w-[70%] bg-white py-4 px-7 rounded-lg my-5'>
 				<div className='text-black'>'link'</div>
 				<div className='flex items-center '>

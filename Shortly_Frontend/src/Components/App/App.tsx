@@ -30,11 +30,15 @@ function App() {
 			{/* conditionally renders Mobile Menu and Hero section */}
 			{mobileMenu ? <MobileMenu styleProp={{display: 'block'}} /> : <Hero />}
 			<section
-				className={`${styles.shortLinkAndStatisticsBgColor} ${styles.container} flex flex-col min-h-screen h-auto mt-28`}>
-				<div className={`${styles.shortenPosition}`}>
+				className={`${styles.shortLinkAndStatisticsBgColor} ${styles.container} flex flex-col min-h-screen h-auto mt-28 mb-0`}>
+				<div className={`${styles.shortenPosition} flex-shrink-1`}>
+					{/* Render Shorten components */}
 					<Shorten />
+					{/* Ensure Statistics is directly below Shorten */}
+					<div className='flex justify-center min-h-[50vh] bg-[#eff1f7] mt-0'>
+						<Statistics />
+					</div>
 				</div>
-					<Statistics />
 			</section>
 			{/* <Boost /> */}
 			{/* <Footer /> */}

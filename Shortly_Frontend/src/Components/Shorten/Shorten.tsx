@@ -17,11 +17,11 @@ export default function Shorten() {
 	}
 
 	return (
-		<section className='flex flex-col items-center justify-center py-12'>
+		<section className='flex flex-col items-center justify-center pt-12 mb-0'>
 			<div
-				className={`w-[80%] md:w-[60%] lg:w-[70%] flex items-center justify-center ${styles.shortenBgImg} border rounded-lg`}>
+				className={`w-[80%] md:w-[60%] lg:w-[70%] flex items-center justify-center ${styles.shortenBgImg} border rounded-lg mb-0`}>
 				<input
-					className='w-[75%] border rounded-md bg-white my-6 p-2 pl-8'
+					className='w-[75%] border rounded-md bg-white my-8 p-2 pl-8'
 					type='text'
 					placeholder='Shorten a link here...'
 				/>
@@ -31,7 +31,6 @@ export default function Shorten() {
 					Shorten It!
 				</button>
 			</div>
-			<br />
 			{urlShorts}
 		</section>
 	);
