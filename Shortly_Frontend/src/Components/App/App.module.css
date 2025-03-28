@@ -2,10 +2,9 @@
 
 .container {
     position: relative;
-    /* flex-direction: column; */
+    flex-direction: column;
     /* align-items: center; */
     /* justify-content: center; */
-    /* min-height: 30vh; */
     min-width: 100%;
     background-color: var(--background-color);  
 }
@@ -13,6 +12,7 @@
 
 .shortLinkAndStatisticsBgColor {
     background-color: var(--background-color);
+    height: auto;
 }
 
 .shortenPosition {

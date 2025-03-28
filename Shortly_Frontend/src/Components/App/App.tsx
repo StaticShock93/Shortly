@@ -25,17 +25,20 @@ function App() {
 	}
 
 	return (
-		<>
+		<section>
 			<NavBar getChildData={getChildData} />
 			{/* conditionally renders Mobile Menu and Hero section */}
 			{mobileMenu ? <MobileMenu styleProp={{display: 'block'}} /> : <Hero />}
-			<div>
-				<Shorten />
-			</div>
-
+			<section
+				className={`${styles.shortLinkAndStatisticsBgColor} ${styles.container} flex flex-col min-h-screen h-auto mt-28`}>
+				<div className={`${styles.shortenPosition}`}>
+					<Shorten />
+				</div>
+					<Statistics />
+			</section>
 			{/* <Boost /> */}
 			{/* <Footer /> */}
-		</>
+		</section>
 	);
 }
 
