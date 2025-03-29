@@ -28,3 +28,15 @@
 	margin-top: 0; /* Remove any extra margin above Statistics */
 	padding-top: 0; /* Ensure no extra padding above Statistics */
 }
+
+.shortenPosition {
+    margin-bottom: 0; /* Ensure no extra margin below Shorten */
+}
+
+.statisticsContainer {
+    margin-top: 0; /* Ensure no extra margin above Statistics */
+}
+
+.boostSection {
+    margin-top: 3rem; /* Add spacing above Boost */
+}

@@ -4,13 +4,22 @@ import Hero from '../Hero/Hero';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import Shorten from '../Shorten/Shorten';
 import Statistics from '../Statistics/Statistics';
-// import Boost from '../Boost/Boost';
-// import Footer from '../Footer/Footer';
+import Boost from '../Boost/Boost';
+import Footer from '../Footer/Footer';
 import styles from '../App/App.module.css';
+import {useQuery} from '@tanstack/react-query';
+
 /**
  * App component
  * @returns {JSX.Element} - React component
+ *
  */
+
+async function fetchUsers() {
+	const response = await fetch('https://jsonplaceholder.typicode.com/users');
+	if (!response.ok) throw new Error('Network response was not ok');
+	return response.json();
+}
 function App() {
 	const [mobileMenu, setMobileMenu] = useState(false);
 
@@ -35,13 +44,15 @@ function App() {
 					{/* Render Shorten components */}
 					<Shorten />
 					{/* Ensure Statistics is directly below Shorten */}
-					<div className='flex justify-center min-h-[50vh] bg-[#eff1f7] mt-0'>
+					<div className={`flex justify-center min-h-[50vh] bg-[#eff1f7] mt-0`}>
 						<Statistics />
 					</div>
 				</div>
 			</section>
-			{/* <Boost /> */}
-			{/* <Footer /> */}
+			<section className='h-auto'>
+				<Boost />
+			</section>
+			<Footer />
 		</section>
 	);
 }

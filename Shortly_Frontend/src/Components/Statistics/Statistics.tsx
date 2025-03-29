@@ -4,7 +4,7 @@ import fullyCustomizableIcon from '../../images/icon-fully-customizable.svg';
 
 export default function Statistics() {
 	return (
-		<section className='bg-[#eff1f7] mt-0 w-[70vw]'>
+		<section className='bg-[#eff1f7] mt-0 w-[70vw] flex flex-col'>
 			<div className='flex flex-col justify-center items-center text-center pt-20 pb-12'>
 				<h2 className='text-3xl font-bold  text-[#34313D]'>
 					Advanced Statistics

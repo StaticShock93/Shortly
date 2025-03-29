@@ -6,13 +6,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* height: 100px; */
-    /* border-radius: 10px; */
-    /* margin-top: 20px; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* position: relative; */
-    /* cursor: pointer; */
-    /* transition: .2s ease-in-out; */
+}
+
+.shortenContainer {
+    max-height: 70vh; /* Limit the height */
+    overflow-y: auto; /* Add scroll if content overflows */
 }

@@ -11,9 +11,13 @@ import UrlShort from '../UrlShort/UrlShort';
 // then add to clipboard
 export default function Shorten() {
 	const [urlShorts, setUrlShorts] = useState<React.ReactNode[]>([]);
+	const [link, setLink] = useState('');
 
 	function handleClick() {
-		setUrlShorts((prev) => [...prev, <UrlShort key={crypto.randomUUID()} />]);
+		setUrlShorts((prev) => [
+			...prev,
+			<UrlShort key={crypto.randomUUID()} longLink={link} shortLink={link} />,
+		]);
 	}
 
 	return (
@@ -24,6 +28,8 @@ export default function Shorten() {
 					className='w-[75%] border rounded-md bg-white my-8 p-2 pl-8'
 					type='text'
 					placeholder='Shorten a link here...'
+					value={link}
+					onChange={(e) => setLink(e.target.value)}
 				/>
 				<button
 					className={`${styles.buttonColors} px-5 ml-5 border-0 rounded-md p-2 font-semibold`}
