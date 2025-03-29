@@ -15,11 +15,7 @@ import {useQuery} from '@tanstack/react-query';
  *
  */
 
-async function fetchUsers() {
-	const response = await fetch('https://jsonplaceholder.typicode.com/users');
-	if (!response.ok) throw new Error('Network response was not ok');
-	return response.json();
-}
+
 function App() {
 	const [mobileMenu, setMobileMenu] = useState(false);
 
@@ -44,15 +40,16 @@ function App() {
 					{/* Render Shorten components */}
 					<Shorten />
 					{/* Ensure Statistics is directly below Shorten */}
-					<div className={`flex justify-center min-h-[50vh] bg-[#eff1f7] mt-0`}>
+					<div
+						className={`flex flex-col items-center justify-center min-h-[50vh] bg-[#eff1f7] mt-0`}>
 						<Statistics />
+						<div>
+							<Boost />
+							<Footer />
+						</div>
 					</div>
 				</div>
 			</section>
-			<section className='h-auto'>
-				<Boost />
-			</section>
-			<Footer />
 		</section>
 	);
 }

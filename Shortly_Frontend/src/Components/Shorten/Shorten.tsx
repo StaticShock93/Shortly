@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './Shorten.module.css';
 import UrlShort from '../UrlShort/UrlShort';
 
@@ -9,15 +9,66 @@ import UrlShort from '../UrlShort/UrlShort';
 // on all subsequent click events, render a new URLShort component
 // add new shorts to localStorage
 // then add to clipboard
+
+type UrlResponse = string;
+
 export default function Shorten() {
 	const [urlShorts, setUrlShorts] = useState<React.ReactNode[]>([]);
 	const [link, setLink] = useState('');
+	const [send, setSend] = useState(false);
+	const [data, setData] = useState<UrlResponse | null>(null);
+	const [error, setError] = useState<string | null>(null);
+
+	useEffect(() => {
+		const postData = async () => {
+			try {
+				const response = await fetch('https://api-ssl.bitly.com/v4/shorten', {
+					method: 'POST',
+					headers: {
+						Authorization: `Bearer a9f0ad861f29823a1657744b0aeacbdf2df7db38`,
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						long_url: link,
+					}),
+				});
+
+				if (!response.ok) {
+					throw new Error(`Error: ${response.status} ${response.statusText}`);
+				}
+
+				const result: UrlResponse = await response.json();
+				setData(result);
+			} catch (err: unknown) {
+				if (err instanceof Error) {
+					setError(err.message);
+				} else {
+					setError('Unknown error occurred');
+				}
+			}
+		};
+
+		// if (send) {
+			// Preventing immediate call on component mount
+			postData();
+		// }
+	}, [send]);
+
+	function showUrl() {
+		
+	}
 
 	function handleClick() {
 		setUrlShorts((prev) => [
 			...prev,
-			<UrlShort key={crypto.randomUUID()} longLink={link} shortLink={link} />,
+			<UrlShort
+				key={crypto.randomUUID()}
+				longLink={link}
+				shortLink={JSON.stringify(data?.link)}
+			/>,
 		]);
+		setSend(!send);
+		console.log('DATA', data);
 	}
 
 	return (

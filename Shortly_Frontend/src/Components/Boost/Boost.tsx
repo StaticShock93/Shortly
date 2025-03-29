@@ -2,7 +2,7 @@ import styles from './Boost.module.css';
 
 export default function Boost() {
 	return (
-		<section className=''>
+		<section className='z-10 w-[100vw]'>
 			<div
 				className={`${styles.boostBgImg} flex flex-col items-center justify-center mb-0 bg-[#eff1f7] h-auto min-h-[45vh]`}>
 				<h2 className='text-3xl font-bold text-center text-white mb-5'>
