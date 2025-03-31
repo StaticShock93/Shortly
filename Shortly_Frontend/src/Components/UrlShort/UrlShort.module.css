@@ -1,5 +1,9 @@
 @import '../../Styles/variables.css';
 
 .backgroundColor {
-    background-color: #eff1f7;
+	background-color: #eff1f7;
+}
+
+.buttonClicked {
+	background-color: var(--darker-purple-theme-color);
 }

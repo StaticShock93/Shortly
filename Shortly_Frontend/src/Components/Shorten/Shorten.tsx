@@ -18,57 +18,78 @@ export default function Shorten() {
 	const [send, setSend] = useState(false);
 	const [data, setData] = useState<UrlResponse | null>(null);
 	const [error, setError] = useState<string | null>(null);
+	const [isCopied, setIsCopied] = useState(false);
 
 	useEffect(() => {
 		const postData = async () => {
 			try {
-				const response = await fetch('https://api-ssl.bitly.com/v4/shorten', {
+				// const response = await fetch('https://api-ssl.bitly.com/v4/shorten', {
+				// 	method: 'POST',
+				// 	headers: {
+				// 		Authorization: `Bearer a9f0ad861f29823a1657744b0aeacbdf2df7db38`,
+				// 		'Content-Type': 'application/json',
+				// 	},
+				// 	body: JSON.stringify({
+				// 		long_url: link,
+				// 	}),
+				// });
+
+				const url = 'https://spoo.me/';
+				const data = new URLSearchParams();
+				data.append('url', link);
+				const response = await fetch(url, {
 					method: 'POST',
 					headers: {
-						Authorization: `Bearer a9f0ad861f29823a1657744b0aeacbdf2df7db38`,
-						'Content-Type': 'application/json',
+						'Content-Type': 'application/x-www-form-urlencoded',
+						Accept: 'application/json',
 					},
-					body: JSON.stringify({
-						long_url: link,
-					}),
+					body: data.toString(),
 				});
 
 				if (!response.ok) {
 					throw new Error(`Error: ${response.status} ${response.statusText}`);
 				}
 
-				const result: UrlResponse = await response.json();
-				setData(result);
+				// const result: UrlResponse = await response.json();
+				const result: UrlResponse | {short_url: string} = await response.json();
+				setData(typeof result === 'string' ? result : result.short_url);
+				console.log('result', result);
+
+				setUrlShorts((prev) => [
+					...prev,
+					<UrlShort
+						key={crypto.randomUUID()}
+						longLink={link}
+						// shortLink={JSON.stringify(result?.link)}
+						shortLink={typeof result === 'string' ? result : result.short_url}
+					/>,
+				]);
+				navigator.clipboard.writeText(
+					typeof result === 'string' ? result : result.short_url
+				);
+				setIsCopied(true);
+				alert('copied to clipboard')
+				setTimeout(() => setIsCopied(false), 2000);
 			} catch (err: unknown) {
 				if (err instanceof Error) {
 					setError(err.message);
 				} else {
 					setError('Unknown error occurred');
 				}
+			} finally {
+				setSend(false);
 			}
 		};
 
-		// if (send) {
-			// Preventing immediate call on component mount
+		if (send) {
+			// Prevents immediate call on component mount
 			postData();
-		// }
-	}, [send]);
-
-	function showUrl() {
-		
-	}
+		}
+	}, [send, link]);
 
 	function handleClick() {
-		setUrlShorts((prev) => [
-			...prev,
-			<UrlShort
-				key={crypto.randomUUID()}
-				longLink={link}
-				shortLink={JSON.stringify(data?.link)}
-			/>,
-		]);
-		setSend(!send);
-		console.log('DATA', data);
+		setSend(true);
+		console.log(urlShorts);
 	}
 
 	return (
