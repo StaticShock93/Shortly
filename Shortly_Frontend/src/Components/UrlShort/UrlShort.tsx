@@ -8,9 +8,15 @@ type linkProps = {
 export default function UrlShort({longLink, shortLink}: linkProps) {
 	const [copy, setCopy] = useState('Copy');
 	const [copyClick, setCopyClick] = useState(false);
+	const [color, setColor] = useState(styles.buttonColors);
 
 	function handleCopyClick() {
 		setCopy('Copied!');
+		setColor(styles.buttonClicked);
+		setTimeout(() => {
+			setCopy('Copy')
+			setColor(styles.buttonColors)
+		} , 4000);
 		if (shortLink) navigator.clipboard.writeText(shortLink);
 	}
 	return (
@@ -22,7 +28,7 @@ export default function UrlShort({longLink, shortLink}: linkProps) {
 					<div className='flex items-center '>
 						<p className={`${styles.buttonLinkColor}`}>{shortLink}</p>
 						<button
-							className={`${styles.buttonColors} ${styles.buttonClicked} px-8 ml-5 border-0 rounded-md p-2 font-semibold`}
+							className={`${color} px-8 ml-5 border-0 rounded-md p-2 font-semibold`}
 							onClick={handleCopyClick}>
 							{copy}
 						</button>
