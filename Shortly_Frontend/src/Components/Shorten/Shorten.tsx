@@ -13,7 +13,6 @@ import UrlShort from '../UrlShort/UrlShort';
 type UrlResponse = string;
 
 export default function Shorten() {
-	const [urlShorts, setUrlShorts] = useState<React.ReactNode[]>([]);
 	const [link, setLink] = useState('');
 	const [send, setSend] = useState(false);
 	const [data, setData] = useState<UrlResponse | null>(null);
@@ -63,15 +62,6 @@ export default function Shorten() {
 						shortLink={typeof result === 'string' ? result : result.short_url}
 					/>
 				);
-
-				// setUrlShorts((prev) => [
-				// 	...prev,
-				// 	<UrlShort
-				// 		key={crypto.randomUUID()}
-				// 		longLink={link}
-				// 		shortLink={typeof result === 'string' ? result : result.short_url}
-				// 	/>,
-				// ]);
 				localStorage.setItem(
 					link,
 					typeof result === 'string' ? result : result.short_url
