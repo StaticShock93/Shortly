@@ -66,11 +66,9 @@ export default function Shorten() {
 					link,
 					typeof result === 'string' ? result : result.short_url
 				);
-				console.log(localStorage);
 			} catch (err: unknown) {
 				if (err instanceof Error) {
 					setError(err.message);
-					console.log('Enter valid URL');
 				} else {
 					setError('Unknown error occurred');
 				}
@@ -125,7 +123,6 @@ export default function Shorten() {
 				</div>
 			</div>
 			{storedShorts}
-			{/* {urlShorts} */}
 		</section>
 	);
 }
