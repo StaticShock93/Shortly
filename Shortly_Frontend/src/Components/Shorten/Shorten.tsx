@@ -15,8 +15,8 @@ type UrlResponse = string;
 export default function Shorten() {
 	const [link, setLink] = useState('');
 	const [send, setSend] = useState(false);
-	const [data, setData] = useState<UrlResponse | null>(null);
-	const [error, setError] = useState<string | null>(null);
+	const [, setData] = useState<UrlResponse | null>(null);
+	const [, setError] = useState<string | null>(null);
 	const [isError, setIsError] = useState(false);
 
 	const storedShorts: React.ReactNode[] = [];

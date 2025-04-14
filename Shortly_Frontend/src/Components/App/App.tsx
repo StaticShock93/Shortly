@@ -7,7 +7,7 @@ import Statistics from '../Statistics/Statistics';
 import Boost from '../Boost/Boost';
 import Footer from '../Footer/Footer';
 import styles from '../App/App.module.css';
-import {useQuery} from '@tanstack/react-query';
+// import {useQuery} from '@tanstack/react-query';
 
 /**
  * App component

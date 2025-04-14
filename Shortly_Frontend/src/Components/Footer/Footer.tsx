@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './Footer.module.css';
+// import React from 'react';
+// import styles from './Footer.module.css';
 import fbIcon from '../../images/icon-facebook.svg';
 import twitterIcon from '../../images/icon-twitter.svg';
 import pinterestIcon from '../../images/icon-pinterest.svg';

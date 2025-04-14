@@ -7,7 +7,7 @@ type linkProps = {
 };
 export default function UrlShort({longLink, shortLink}: linkProps) {
 	const [copy, setCopy] = useState('Copy');
-	const [copyClick, setCopyClick] = useState(false);
+	// const [copyClick, setCopyClick] = useState(false);
 	const [color, setColor] = useState(styles.buttonColors);
 
 	function handleCopyClick() {

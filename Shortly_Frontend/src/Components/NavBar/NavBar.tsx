@@ -6,7 +6,7 @@
  * 4. It has a function handleClick to handle the click event on the mobile menu.
  *  */
 
-import React, {useState} from 'react';
+import {useState} from 'react';
 import styles from './NavBar.module.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
@@ -31,7 +31,7 @@ export default function NavBar({getChildData}: NavBarProps) {
 	 * handleCLick
 	 * @description - function to handle the click event on the mobile menu
 	 */
-	const handleCLick = (event: React.MouseEvent | React.TouchEvent) => {
+	const handleCLick = () => {
 		console.log('click', hidden);
 		setHidden((prevHidden: boolean) => {
 			const newHidden = !prevHidden;
