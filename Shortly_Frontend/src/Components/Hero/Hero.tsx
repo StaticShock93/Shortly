@@ -4,6 +4,7 @@
 // 3. The first div contains an image and the second div contains a heading, paragraph, and a button.
 
 import styles from './Hero.module.css';
+import illustrationWorking from '../../assets/assets/illustration-working.svg'
 
 /**
  * Hero component
@@ -15,7 +16,7 @@ export default function Hero() {
 			className={`flex flex-col md:flex-row items-center md:justify-between md:mt-10 md:ml-33 lg:ml-45 md:w-[95vw] md:max-w-[100vw]`}>
 			<div
 				className={`md:order-2 flex items-center justify-center pl-20 shrink-1`}>
-				<img src='./src/images/illustration-working.svg' alt='illustration' />
+				<img src={illustrationWorking} alt='illustration' />
 			</div>
 			<div
 				className={`md:order-1 flex flex-col items-center md:items-start justify-center shrink-1 text-center md:text-left mt-5 md:mt-0`}>

@@ -10,6 +10,7 @@ import {useState} from 'react';
 import styles from './NavBar.module.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
+import logo from '../../assets/assets/logo.svg'
 
 /**
  * NavBarProps
@@ -47,7 +48,7 @@ export default function NavBar({getChildData}: NavBarProps) {
 				className={`flex justify-between items-center pt-5 px-8 md:py-10 md:px-45 font-bold ${styles.textColor}`}>
 				<div className='flex items-center'>
 					<a href='/'>
-						<img src='/src/images/logo.svg' alt='Shortly' height='300' />
+						<img src={logo} alt='Shortly' height='300' />
 					</a>
 					<ul className={`lg:flex items-center shrink-1 hidden`}>
 						<li className={`${styles.links} ml-7`}>Features</li>

@@ -1,6 +1,7 @@
-import brandRecognitionIcon from '../../images/icon-brand-recognition.svg';
-import detailedRecordsIcon from '../../images/icon-detailed-records.svg';
-import fullyCustomizableIcon from '../../images/icon-fully-customizable.svg';
+import brandRecognitionIcon from '../../assets/assets/icon-brand-recognition.svg';
+// import brandRecognitionIcon from '../../images/icon-brand-recognition.svg';
+import detailedRecordsIcon from '../../assets/assets/icon-detailed-records.svg';
+import fullyCustomizableIcon from '../../assets/assets/icon-fully-customizable.svg';
 
 export default function Statistics() {
 	return (

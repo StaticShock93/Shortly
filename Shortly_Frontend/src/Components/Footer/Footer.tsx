@@ -1,9 +1,10 @@
 // import React from 'react';
 // import styles from './Footer.module.css';
-import fbIcon from '../../images/icon-facebook.svg';
-import twitterIcon from '../../images/icon-twitter.svg';
-import pinterestIcon from '../../images/icon-pinterest.svg';
-import instagramIcon from '../../images/icon-instagram.svg';
+// import fbIcon from '../../images/icon-facebook.svg';
+import fbIcon from '../../assets/assets/icon-facebook.svg';
+import twitterIcon from '../../assets/assets/icon-twitter.svg';
+import pinterestIcon from '../../assets/assets/icon-pinterest.svg';
+import instagramIcon from '../../assets/assets/icon-instagram.svg';
 
 export default function Footer() {
 	return (
