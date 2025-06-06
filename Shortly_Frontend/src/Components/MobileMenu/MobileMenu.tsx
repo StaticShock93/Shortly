@@ -26,6 +26,7 @@ export default function MobileMenu({styleProp}: MobileMenuProps) {
 	return (
 		<section style={styleProp} className={`${styles.bg}`}>
 			<div
+			
 				className={`${styles.mobileMenuBg} ${styles.whiteTextColor} p-5 border rounded-xl font-semibold`}>
 				<ul className='flex flex-col items-center '>
 					<li className='py-2'>

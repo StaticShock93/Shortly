@@ -6,8 +6,7 @@ describe('NavBar Component', () => {
 	//check logo is rendered
 	//check links are rendered
 	//check sign up and login button is rendered
-	//check mobile menu icon is rendered
-	//check dropdown menu is rendered when clicked
+	//check mobile menu icon is there but hidden
 	//check drowndown menu is hidden when re-clicked
 	it('renders navbar correctly', () => {
 		//arrange
@@ -33,7 +32,8 @@ describe('NavBar Component', () => {
 		// const loginLink = screen.getByText('Login');
 		const loginLink = links.find((link) => link.textContent?.includes('Login'));
 		expect(loginLink).toBeInTheDocument();
+
+		const menuIcon = screen.getByRole('button', {hidden: true});
+		expect(menuIcon).toBeInTheDocument();
 	});
 });
-
-

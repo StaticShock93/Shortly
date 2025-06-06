@@ -33,13 +33,11 @@ export default function NavBar({getChildData}: NavBarProps) {
 	 * @description - function to handle the click event on the mobile menu
 	 */
 	const handleCLick = () => {
-		console.log('click', hidden);
 		setHidden((prevHidden: boolean) => {
 			const newHidden = !prevHidden;
 			getChildData(newHidden);
 			return newHidden;
 		});
-		getChildData(hidden);
 	};
 
 	return (
